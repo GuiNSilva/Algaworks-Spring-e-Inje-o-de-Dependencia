@@ -3,15 +3,21 @@ package com.algaworks.algafood.di.service;
 import org.springframework.stereotype.Component;
 
 import com.algaworks.algafood.di.modelo.Cliente;
+import com.algaworks.algafood.di.notificacao.Notificador;
 import com.algaworks.algafood.di.notificacao.NotificadorEmail;
 
 @Component
 public class AtivacaoClienteService {
 	
-	private NotificadorEmail notificador;// Necessario criar uma instacia da interface 
+	private Notificador notificador;
 	
+	public AtivacaoClienteService(Notificador notificador) { //construtor com parametro injetado
+		this.notificador = notificador;
+		
+		System.out.println("AtivacaoClienteService" + notificador);
+	}
 	
-	
+
 	public void ativar(Cliente cliente) {
 		/*O metodo de notifica��o e chamado
 		 * sempre que o cliente � ativado*/
