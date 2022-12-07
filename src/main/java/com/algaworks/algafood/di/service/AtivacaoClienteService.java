@@ -6,7 +6,7 @@ import com.algaworks.algafood.di.modelo.Cliente;
 import com.algaworks.algafood.di.notificacao.Notificador;
 import com.algaworks.algafood.di.notificacao.NotificadorEmail;
 
-@Component
+
 public class AtivacaoClienteService {
 	
 	private Notificador notificador;
