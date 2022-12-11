@@ -1,7 +1,5 @@
 package com.algaworks.algafood.di.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -13,12 +11,8 @@ import com.algaworks.algafood.di.notificacao.NotificadorEmail;
 public class AtivacaoClienteService {
 	
 	@Autowired//consegue injetar mesmo sendo um atributo private.
-	private  List<Notificador> notificadores;
+	private Notificador notificador;
 	
-	//@Autowired//
-	//public AtivacaoClienteService(Notificador notificador) { //construtor com parametro injetado
-		//this.notificadores = (List<Notificador>) notificador;
-		
 	
 	
 	/*
@@ -30,12 +24,11 @@ public class AtivacaoClienteService {
 	 * */
 
 	public void ativar(Cliente cliente) {
-		cliente.ativar();/*Metodo na classe cliente*/
-		for (Notificador notificador:notificadores) {
-		notificador.notificar(cliente, "Seu cadastro esta ativo !");//Chamando o metodo notificar da instancia notificador, da interface Notificador.
-		}
 		/*O metodo de notifica��o e chamado
 		 * sempre que o cliente � ativado*/
+		cliente.ativar();/*Metodo na classe cliente*/
+		
+		notificador.notificar(cliente, "Seu cadastro esta ativo !");//Chamando o metodo notificar da instancia notificador, da interface Notificador.
 		
 		
 	}
