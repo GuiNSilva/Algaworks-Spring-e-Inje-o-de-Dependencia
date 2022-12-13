@@ -14,7 +14,7 @@ import com.algaworks.algafood.di.notificacao.TipodoNotificador;
 @Component
 public class AtivacaoClienteService {
 	
-	@TipodoNotificador(NivelUrgencia.NORMAL)
+	@TipodoNotificador(NivelUrgencia.URGENTE)
 	//@Qualifier("Opcional")//definindo qual notificador sera usado.
 	@Autowired//consegue injetar mesmo sendo um atributo private.
 	private Notificador notificador;
