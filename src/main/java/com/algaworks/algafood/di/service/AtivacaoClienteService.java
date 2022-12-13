@@ -1,15 +1,19 @@
 package com.algaworks.algafood.di.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.algaworks.algafood.di.modelo.Cliente;
 import com.algaworks.algafood.di.notificacao.Notificador;
 import com.algaworks.algafood.di.notificacao.NotificadorEmail;
 
+@SuppressWarnings("unused")
 @Component
 public class AtivacaoClienteService {
 	
+	
+	@Qualifier("Opcional")//definindo qual notificador sera usado.
 	@Autowired//consegue injetar mesmo sendo um atributo private.
 	private Notificador notificador;
 	
