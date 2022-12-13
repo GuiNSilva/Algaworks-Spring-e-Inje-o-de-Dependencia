@@ -5,15 +5,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.algaworks.algafood.di.modelo.Cliente;
+import com.algaworks.algafood.di.notificacao.NivelUrgencia;
 import com.algaworks.algafood.di.notificacao.Notificador;
 import com.algaworks.algafood.di.notificacao.NotificadorEmail;
+import com.algaworks.algafood.di.notificacao.TipodoNotificador;
 
 @SuppressWarnings("unused")
 @Component
 public class AtivacaoClienteService {
 	
-	
-	@Qualifier("Opcional")//definindo qual notificador sera usado.
+	@TipodoNotificador(NivelUrgencia.NORMAL)
+	//@Qualifier("Opcional")//definindo qual notificador sera usado.
 	@Autowired//consegue injetar mesmo sendo um atributo private.
 	private Notificador notificador;
 	

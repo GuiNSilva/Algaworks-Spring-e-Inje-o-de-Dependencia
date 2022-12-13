@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 
 import com.algaworks.algafood.di.modelo.Cliente;
 
-@Qualifier("Prioridade")
+
+@TipodoNotificador(NivelUrgencia.URGENTE)
+//@Qualifier("Prioridade")
 @Component
 public class NotificadorEmail implements Notificador{
 	
